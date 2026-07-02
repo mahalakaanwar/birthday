@@ -7,7 +7,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght=500;600;700;800&family=Poppins:wght=400;500;600;700;800&family=JetBrains+Mono:wght=400;600&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    TOKENS
@@ -360,7 +360,7 @@ img{ max-width:100%; display:block; }
 
 <!-- ============================================================
      LOADER
-     ============================================================ -->
+     ============================================================ */
 <div id="loader">
   <div class="loader-emoji">⚙️</div>
   <p class="loader-status" id="loaderStatus">Initializing...</p>
@@ -380,7 +380,6 @@ img{ max-width:100%; display:block; }
 
   <!-- WELCOME -->
   <section class="scene" id="scene-welcome">
-    <!-- <p class="module-tag">SYSTEM &gt; BOOT COMPLETE</p> -->
     <h1 class="hb-headline" id="welcomeHeadline">HAPPY BIRTHDAY HOORIYA 🎂</h1>
     <p class="scene-sub">Birthday detected. Four verification modules must be completed before your gift unlocks.</p>
     <div class="btn-row">
@@ -482,10 +481,8 @@ img{ max-width:100%; display:block; }
   <!-- FINALE -->
   <section class="scene" id="finale">
     <div id="balloonField" aria-hidden="true" style="position:absolute; inset:0; overflow:hidden; pointer-events:none;"></div>
-    <!-- <p class="module-tag" style="position:relative; z-index:2;">SYSTEM &gt; UPDATE COMPLETE</p> -->
     <h1 class="hb-headline" style="position:relative; z-index:2;">HAPPY BIRTHDAY HOORIYA 🎉</h1>
     <p class="final-message" style="position:relative; z-index:2;" id="finalMessage"></p>
-    <!-- <button class="replay-link" id="replayBtn" style="position:relative; z-index:2;">Run the whole thing again</button> -->
   </section>
 
 </main>
@@ -536,88 +533,86 @@ const CONFIG = {
       correctMsg: "A true scholar.",
       wrongMsg: "Incorrect. There is always more cake."
     },
-     {
-  q: "what`s your favourite food? 🍕",
-  options: [
-    "Pizza",
-    "Burger",
-    "Jo bhi Janab-e-Mukhtasar ki plate mein ho 😭",
-    "Chocolate"
-  ],
-  correct: 2,
-  correctMsg: "Bilkul! Demogorgon kabhi apna khana nahi khati, sirf mera. 😂🍟",
-  wrongMsg: "Wrong! demogorgan ka favourite food wahi hota hai jo Janab-e-Mukhtasar kha rahi ho. 👹"
-},
+    {
+      q: "what`s your favourite food? 🍕",
+      options: [
+        "Pizza",
+        "Burger",
+        "Jo bhi Janab-e-Mukhtasar ki plate mein ho 😭",
+        "Chocolate"
+      ],
+      correct: 2,
+      correctMsg: "Bilkul! Demogorgon kabhi apna khana nahi khati, sirf mera. 😂🍟",
+      wrongMsg: "Wrong! demogorgan ka favourite food wahi hota hai jo Janab-e-Mukhtasar kha rahi ho. 👹"
+    },
     {
       q: "On a scale of 1 to 10, how chaotic is today allowed to be?",
       options: ["1","5","10","Yes"],
       correct: 2,
       correctMsg: "'10' was always the answer.",
       wrongMsg: "Close, but the answer transcends numbers."
+    },
+    {
+      q: "What is Hooriya's natural habitat? 🦉",
+      options: [
+        "Early morning gym",
+        "Library at 8 AM",
+        "Anywhere after midnight",
+        "Sleeping before 10 PM"
+      ],
+      correct: 2,
+      correctMsg: "Exactly! The Night Owl has awakened. 🌙",
+      wrongMsg: "Nope! Hooriya becomes fully operational after midnight. 😂"
+    },
+    {
+      q: "What does 'Just one bite' from Hooriya actually mean? 🍔",
+      options: [
+        "One tiny bite",
+        "Half of your meal",
+        "She'll buy you another one",
+        "She isn't hungry"
+      ],
+      correct: 1,
+      correctMsg: "Correct! 'One bite' is the biggest scam in friendship history. 🤡",
+      wrongMsg: "Wrong! Everyone knows 'one bite' means half your food is gone. 😂"
+    },
+    {
+      q: "Which country is Hooriya officially from? 🌍",
+      options: [
+        "Wonderland",
+        "Bombolistan",
+        "Narnia",
+        "Atlantis"
+      ],
+      correct: 1,
+      correctMsg: "Welcome to Bombolistan, home of the legendary Demogorgon! 👹",
+      wrongMsg: "Incorrect! The correct answer is Bombolistan from Bambarbola Land. 😂"
+    },
+    {
+      q: "What is the best title for Hooriya? 👑",
+      options: [
+        "Queen of Peace",
+        "Professional Food Thief",
+        "Morning Person",
+        "World's Most Organized Human"
+      ],
+      correct: 1,
+      correctMsg: "Absolutely! The CEO of stealing snacks has claimed another victory. 🍟😂",
+      wrongMsg: "Wrong! Everyone knows she's the Professional Food Thief. 👹"
+    },
+    {
+      q: "Who is the luckiest person in this friendship? ❤️",
+      options: [
+        "Hooriya",
+        "Janab-e-Mukhtasar",
+        "Both of us",
+        "Obviously both ❤️"
+      ],
+      correct: 3,
+      correctMsg: "Correct! Six years of friendship is the real gift. 🥹🎉",
+      wrongMsg: "There's only one right answer: Obviously both! ❤️"
     }
   ],
-    {
-  q: "What is Hooriya's natural habitat? 🦉",
-  options: [
-    "Early morning gym",
-    "Library at 8 AM",
-    "Anywhere after midnight",
-    "Sleeping before 10 PM"
-  ],
-  correct: 2,
-  correctMsg: "Exactly! The Night Owl has awakened. 🌙",
-  wrongMsg: "Nope! Hooriya becomes fully operational after midnight. 😂"
-},
-{
-  q: "What does 'Just one bite' from Hooriya actually mean? 🍔",
-  options: [
-    "One tiny bite",
-    "Half of your meal",
-    "She'll buy you another one",
-    "She isn't hungry"
-  ],
-  correct: 1,
-  correctMsg: "Correct! 'One bite' is the biggest scam in friendship history. 🤡",
-  wrongMsg: "Wrong! Everyone knows 'one bite' means half your food is gone. 😂"
-},
-{
-  q: "Which country is Hooriya officially from? 🌍",
-  options: [
-    "Wonderland",
-    "Bombolistan",
-    "Narnia",
-    "Atlantis"
-  ],
-  correct: 1,
-  correctMsg: "Welcome to Bombolistan, home of the legendary Demogorgon! 👹",
-  wrongMsg: "Incorrect! The correct answer is Bombolistan from Bambarbola Land. 😂"
-},
-{
-  q: "What is the best title for Hooriya? 👑",
-  options: [
-    "Queen of Peace",
-    "Professional Food Thief",
-    "Morning Person",
-    "World's Most Organized Human"
-  ],
-  correct: 1,
-  correctMsg: "Absolutely! The CEO of stealing snacks has claimed another victory. 🍟😂",
-  wrongMsg: "Wrong! Everyone knows she's the Professional Food Thief. 👹"
-},
-
-{
-  q: "Who is the luckiest person in this friendship? ❤️",
-  options: [
-    "Hooriya",
-    "Janab-e-Mukhtasar",
-    "Both of us",
-    "Obviously both ❤️"
-  ],
-  correct: 3,
-  correctMsg: "Correct! Six years of friendship is the real gift. 🥹🎉",
-  wrongMsg: "There's only one right answer: Obviously both! ❤️"
-},
-
 
   finalMessage:
     "Thank you for being one of the coolest people I know.\nMay your WiFi stay strong,\nyour phone never reach 1%,\nand your food always arrive hot.",
@@ -723,7 +718,7 @@ function finishLoading(){
    SCENE NAVIGATION
    ============================================================ */
 const scenes = ['welcome','verify','quiz','cake','gift','gallery','roast','danger','finale'];
-const moduleScenes = ['verify','quiz','cake','gift']; // tracked by dots
+const moduleScenes = ['verify','quiz','cake','gift'];
 function showScene(name){
   scenes.forEach(s=>{
     const el = document.getElementById(s === 'finale' ? 'finale' : 'scene-'+s);
@@ -745,7 +740,7 @@ function showScene(name){
   if(name === 'finale') runFinale();
 }
 
-document.getElementById('startBtn').addEventListener('click', ()=>{
+document.getElementById('startBtn').addEventListener('click', function(){
   sfxClick();
   showScene('verify');
 });
@@ -790,7 +785,7 @@ noBtn.addEventListener('click', function(e){
   handleNoEvade(e);
 });
 
-yesBtn.addEventListener('click', ()=>{
+yesBtn.addEventListener('click', function(){
   sfxYes();
   verifyMsg.textContent = 'Verified. Welcome back.';
   spawnConfettiBurst(window.innerWidth/2, window.innerHeight*0.4, 60);
@@ -837,7 +832,7 @@ function onQuizAnswer(btn, i){
   }
   document.getElementById('quizNextBtn').disabled = false;
 }
-document.getElementById('quizNextBtn').addEventListener('click', ()=>{
+document.getElementById('quizNextBtn').addEventListener('click', function(){
   quizIndex++;
   if(quizIndex >= CONFIG.quiz.length){
     showScene('cake');
@@ -877,7 +872,6 @@ function runFromCursor(){
 }
 document.getElementById('runningCake').addEventListener('mouseenter', runFromCursor);
 document.getElementById('runningCake').addEventListener('click', function(e){
-  // small chance-free catch: clicking directly always succeeds (mouseenter already dodges most of the time)
   if(cakeCaught) return;
   cakeCaught = true;
   sfxWin();
@@ -891,7 +885,7 @@ document.getElementById('runningCake').addEventListener('touchstart', function(e
   e.preventDefault();
   this.dispatchEvent(new Event('click'));
 }, { passive:false });
-document.getElementById('cakeContinueBtn').addEventListener('click', ()=>{
+document.getElementById('cakeContinueBtn').addEventListener('click', function(){
   showScene('gift');
   setupGiftGame();
 });
@@ -939,7 +933,7 @@ function onBoxClick(box, isWinner){
     sfxFail();
   }
 }
-document.getElementById('giftContinueBtn').addEventListener('click', ()=>{
+document.getElementById('giftContinueBtn').addEventListener('click', function(){
   showScene('gallery');
   buildGallery();
 });
@@ -965,13 +959,13 @@ function openLightbox(p){
   document.getElementById('lightboxCaption').textContent = p.caption;
   document.getElementById('lightbox').classList.add('open');
 }
-document.getElementById('lightboxClose').addEventListener('click', ()=>{
+document.getElementById('lightboxClose').addEventListener('click', function(){
   document.getElementById('lightbox').classList.remove('open');
 });
-document.getElementById('lightbox').addEventListener('click', (e)=>{
+document.getElementById('lightbox').addEventListener('click', function(e){
   if(e.target.id === 'lightbox') document.getElementById('lightbox').classList.remove('open');
 });
-document.getElementById('galleryNextBtn').addEventListener('click', ()=>{
+document.getElementById('galleryNextBtn').addEventListener('click', function(){
   showScene('roast');
 });
 
@@ -1006,7 +1000,7 @@ document.getElementById('scanBtn').addEventListener('click', function(){
   }
   step();
 });
-document.getElementById('roastNextBtn').addEventListener('click', ()=>{
+document.getElementById('roastNextBtn').addEventListener('click', function(){
   showScene('danger');
 });
 
@@ -1020,7 +1014,7 @@ document.getElementById('dnpBtn').addEventListener('click', function(){
   sfxBoom();
   startFireworks(2200);
 });
-document.getElementById('finaleBtn').addEventListener('click', ()=>{
+document.getElementById('finaleBtn').addEventListener('click', function(){
   showScene('finale');
 });
 
@@ -1037,26 +1031,6 @@ function runFinale(){
   launchBalloons();
   sfxWin();
 }
-document.getElementById('replayBtn').addEventListener('click', ()=>{
-  finaleStarted = false;
-  noClickCount = 0;
-  quizIndex = 0;
-  document.getElementById('loader').classList.remove('done');
-  document.getElementById('loaderBar').style.width = '0%';
-  document.getElementById('loaderPct').textContent = '0%';
-  document.getElementById('dnpBtn').disabled = false;
-  document.getElementById('dnpReveal').classList.remove('show');
-  document.getElementById('finaleBtn').disabled = true;
-  document.getElementById('roastNextBtn').style.display = 'none';
-  document.getElementById('scannerResult').textContent = '';
-  document.getElementById('scannerStatus').textContent = 'Press start to scan';
-  document.getElementById('scanBtn').disabled = false;
-  scenes.forEach(s=>{
-    const el = s === 'finale' ? document.getElementById('finale') : document.getElementById('scene-'+s);
-    if(el) el.classList.remove('active');
-  });
-  runLoader();
-});
 
 function launchBalloons(){
   const field = document.getElementById('balloonField');
