@@ -128,8 +128,8 @@ img{ max-width:100%; display:block; }
   color:var(--white); box-shadow:0 14px 30px rgba(255,77,109,.35);
   transition:transform .25s var(--ease-pop), box-shadow .25s ease;
 }
-.btn:hover{ transform:translateY(-3px) scale(1.03); box-shadow:0 18px 36px rgba(255,77,109,.45); }
-.btn:active{ transform:translateY(0) scale(.97); }
+.btn:hover:not([disabled]){ transform:translateY(-3px) scale(1.03); box-shadow:0 18px 36px rgba(255,77,109,.45); }
+.btn:active:not([disabled]){ transform:translateY(0) scale(.97); }
 .btn[disabled]{ opacity:.35; cursor:not-allowed; transform:none; }
 .btn.alt{ background:linear-gradient(135deg, var(--mint), #00b8a0); box-shadow:0 14px 30px rgba(0,245,212,.3); color:var(--navy); }
 .btn.ghost{ background:transparent; border:2px solid rgba(255,255,255,.3); box-shadow:none; }
@@ -505,7 +505,7 @@ img{ max-width:100%; display:block; }
 "use strict";
 
 /* ============================================================
-   EDIT ME — personal content lives here.
+   CONFIG
    ============================================================ */
 const CONFIG = {
   friendName: "Hooriya",
@@ -548,8 +548,8 @@ const CONFIG = {
     {
       q: "On a scale of 1 to 10, how chaotic is today allowed to be?",
       options: ["1","5","10","Yes"],
-      correct: 2,
-      correctMsg: "'10' was always the answer.",
+      correct: 3,
+      correctMsg: "'Yes' was always the answer.",
       wrongMsg: "Close, but the answer transcends numbers."
     },
     {
@@ -631,7 +631,7 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 function announce(msg){ document.getElementById('liveRegion').textContent = msg; }
 
 /* ============================================================
-   AUDIO — tiny synthesized SFX, no external files
+   AUDIO
    ============================================================ */
 let audioCtx = null;
 function ensureAudio(){
@@ -746,7 +746,7 @@ document.getElementById('startBtn').addEventListener('click', function(){
 });
 
 /* ============================================================
-   GAME 1 — BIRTHDAY VERIFICATION (NO button runs away)
+   GAME 1 — BIRTHDAY VERIFICATION
    ============================================================ */
 const noMessages = ["Nice try.","Wrong answer detected.","System refuses this choice.","You cannot escape your birthday.","Access denied.","Still no.","Not happening."];
 let noClickCount = 0;
@@ -789,7 +789,10 @@ yesBtn.addEventListener('click', function(){
   sfxYes();
   verifyMsg.textContent = 'Verified. Welcome back.';
   spawnConfettiBurst(window.innerWidth/2, window.innerHeight*0.4, 60);
-  setTimeout(()=> showScene('quiz'), 700);
+  setTimeout(()=> {
+    showScene('quiz');
+    renderQuiz();
+  }, 700);
 });
 
 /* ============================================================
@@ -1051,7 +1054,7 @@ function launchBalloons(){
 }
 
 /* ============================================================
-   CONFETTI + FIREWORKS — shared canvas particle engine
+   CONFETTI + FIREWORKS
    ============================================================ */
 const fxCanvas = document.getElementById('fxCanvas');
 const fctx = fxCanvas.getContext('2d');
@@ -1148,7 +1151,7 @@ function startFireworks(duration){
 }
 
 /* ============================================================
-   EASTER EGG — hidden corner button
+   EASTER EGG
    ============================================================ */
 const eggMessages = [
   "You found the secret button. There is nothing else here. Congratulations.",
@@ -1182,7 +1185,6 @@ document.getElementById('eggHint').addEventListener('click', function(){
    INIT
    ============================================================ */
 buildFloatingEmojis();
-renderQuiz();
 runLoader();
 
 })();
